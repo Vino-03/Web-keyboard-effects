@@ -1,0 +1,77 @@
+/* 基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+}
+
+#container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* 按键样式 */
+.key {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    user-select: none;
+    transition: background-color 0.1s, color 0.1s, opacity 0.5s;
+    pointer-events: none;
+    padding: 0 8px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* 长按效果 */
+.key.pressed {
+    background-color: #333;
+    color: white;
+    transform: translate(-50%, -50%) scale(0.90);
+}
+
+/* 淡出动画 */
+.key.fade-out {
+    opacity: 0;
+}
+
+/* 星星效果 */
+.star {
+    position: absolute;
+    pointer-events: none;
+    clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+    );
+}
